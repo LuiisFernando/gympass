@@ -31,7 +31,7 @@ export const SubmitButton = styled(RectButton)`
     background: #E37144
     border-radius: 4px
     margin-left: 10px
-    padding: 0 12px
+    padding: 0 10px
 `
 
 export const SubmitButtonText = styled.Text`
@@ -58,7 +58,7 @@ export const Gym = styled.TouchableWithoutFeedback`
 
 export const GymContainer = styled.View`
     margin: 0 20px 30px
-    background: #eee
+    
     flex-direction: row
 `
 
@@ -74,6 +74,13 @@ export const Title = styled.Text`
     color: #333
     font-weight: bold
     margin-top: 15px
+    margin-left: 15px
+`
+
+export const Rating = styled.Text`
+    font-size: 10px
+    font-weight: bold
+    color: #000
     margin-left: 15px
 `
 

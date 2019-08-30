@@ -1,22 +1,35 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { 
-    Information
+    Container,
+    Avatar
 } from './styles'
 
-export default class Gym extends Component {
+export default function Gym({ navigation })  {
+    const [gym, setGym] = useState(null)
 
-    componentDidMount() {
-        const id = this.props.navigation.getParam('gym')
 
-        console.log(id)
+    function loadGym() {
+        const gym = navigation.getParam('gym')
+        console.log(gym)
+        setGym(gym)
     }
 
-    render() {
-        return (
-            <Information />
+    useEffect(() => {
+        loadGym()
+    }, [])
+
+    
+    return (
+        (
+            gym && 
+            <Container>
+                <Avatar source={{ uri: gym.logo }} />
+            </Container>
         )
-    }
+        
+    )
+    
 }
 
 Gym.navigationOptions = {

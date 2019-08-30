@@ -15,8 +15,11 @@ import {
     GymButtonText,
     Col1,
     Col2,
-    GymContainer
+    GymContainer,
+    Rating
 } from './styles'
+
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import api from '../../services/api'
 
@@ -32,8 +35,6 @@ export default function Main ({ navigation }) {
         setGyms(gyms.data)
 
         setLoading(false)
-
-        console.log(gyms)
     }
 
     useEffect(() => {
@@ -59,7 +60,8 @@ export default function Main ({ navigation }) {
                 />
 
                 <SubmitButton>
-                    <SubmitButtonText>+</SubmitButtonText>
+                    {/* <SubmitButtonText>+</SubmitButtonText> */}
+                    <Icon name='add' size={20} color='#FFF' />
                 </SubmitButton>
             </Form>
 
@@ -76,6 +78,7 @@ export default function Main ({ navigation }) {
 
                         <Col2>
                             <Title>{item.title}</Title>
+                            <Rating>{item.rating}</Rating>
                         </Col2>
                     </GymContainer>
                     
