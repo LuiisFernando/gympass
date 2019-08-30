@@ -11,6 +11,7 @@ export const Form = styled.View`
     padding-bottom: 20px
     border-bottom-width: 1px
     border-color: #eee
+    padding: 30px 20px
 `
 
 export const Input = styled.TextInput.attrs({
@@ -51,11 +52,14 @@ export const Loading = styled.ActivityIndicator.attrs({
     margin: 30px 0
 `
 
-export const Gym = styled.View`
+export const Gym = styled.TouchableWithoutFeedback`
+  
+`
+
+export const GymContainer = styled.View`
     margin: 0 20px 30px
     background: #eee
     flex-direction: row
-    
 `
 
 export const Avatar = styled.Image`
@@ -66,10 +70,11 @@ export const Avatar = styled.Image`
 `
 
 export const Title = styled.Text`
-    font-size: 11px
+    font-size: 15px
     color: #333
     font-weight: bold
-    margin-top: 4px
+    margin-top: 15px
+    margin-left: 15px
 `
 
 export const GymButton = styled(RectButton)`
