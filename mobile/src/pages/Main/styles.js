@@ -12,6 +12,7 @@ export const Form = styled.View`
     border-bottom-width: 1px
     border-color: #eee
     padding: 30px 20px
+    
 `
 
 export const Input = styled.TextInput.attrs({
@@ -34,15 +35,14 @@ export const SubmitButton = styled(RectButton)`
     padding: 0 10px
 `
 
-export const SubmitButtonText = styled.Text`
-    color: #fff
-    font-size: 20px
-`
 
 export const List = styled.FlatList.attrs({
     showsVerticalScrollIndicator: false
 })`
-    margin-top: 20px
+    
+    
+    height: 100%
+    
 `
 
 export const Loading = styled.ActivityIndicator.attrs({
@@ -57,9 +57,13 @@ export const Gym = styled.TouchableWithoutFeedback`
 `
 
 export const GymContainer = styled.View`
-    margin: 0 20px 30px
     
+    height: 90px
+    margin-left: 20px
+    border-bottom-width: 1px
+    border-color: #eee
     flex-direction: row
+    align-items: center
 `
 
 export const Avatar = styled.Image`
@@ -74,32 +78,18 @@ export const Title = styled.Text`
     color: #333
     font-weight: bold
     margin-top: 15px
-    margin-left: 15px
+    margin-left: 10px
 `
 
-export const Rating = styled.Text`
-    font-size: 10px
-    font-weight: bold
-    color: #000
-    margin-left: 15px
-`
-
-export const GymButton = styled(RectButton)`
-    background: #E37144
-    width: 100px
-    border-radius: 4px
-    justify-content: center
-    align-items: center
-    height: 36px
-`
-
-export const GymButtonText = styled.Text`
-    color: #fff
+export const Rating = styled.View`
+    flex-direction: row
+    margin-left: 10px
 `
 
 export const Col1 = styled.View`
+    width: 20%
 `
 
 export const Col2 = styled.View`
-    
+    width: 80%
 `

@@ -17,6 +17,10 @@ export const GymContainer = styled.View`
     flex: 4
 `
 
+export const ActivitiesContainer = styled.View`
+    flex: 1
+`
+
 export const MapContainer = styled.View`
     flex: 2
 `

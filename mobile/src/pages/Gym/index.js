@@ -4,27 +4,43 @@ import {
     Container,
     Avatar,
     GymContainer,
-    MapContainer
+    MapContainer,
+    ActivitiesContainer
 } from './styles'
 
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps'
 
+import markerImage from '../../assets/marker.png'
+
 
 export default function Gym({ navigation })  {
     const [gym, setGym] = useState(null)
-
+    const [region, setRegion] = useState(null)
 
     function loadGym() {
         const gym = navigation.getParam('gym')
-        
-        gym.location.latitudeDelta = 0.006
-        gym.location.longitudeDelta = 0.006
-
+        handleLocation(gym)
         setGym(gym)
+    }
+
+    function handleLocation(academia) {
+        const { latitude, longitude } = academia.location
+        
+        const region = {
+            latitude,
+            longitude,
+            latitudeDelta: 0.001,
+            longitudeDelta: 0.001
+        }
+
+        setRegion(region)
     }
 
     useEffect(() => {
         loadGym()
+
+        return () => { console.log('vai sair') }
+
     }, [])
 
     
@@ -41,7 +57,13 @@ export default function Gym({ navigation })  {
                 <Container>
                     <GymContainer>
                         <Text>gym</Text>
+
+                        <ActivitiesContainer>
+
+                        </ActivitiesContainer>
+
                     </GymContainer>
+
                     <MapContainer>
 
                         <MapView
@@ -49,11 +71,15 @@ export default function Gym({ navigation })  {
                         provider={PROVIDER_GOOGLE}
                         showsUserLocation={true}
                         loadingEnabled={true}
-                        initialRegion={gym.location}
+                        initialRegion={region}
                         ref={ref => {
                         this.mapView = ref;
                         }}
-                        ></MapView>
+                        >
+
+                            <Marker coordinate={gym.location} anchor={{ x: 0, y: 0 }} image={markerImage} />
+
+                        </MapView>
                     </MapContainer>
                 </Container>
         )

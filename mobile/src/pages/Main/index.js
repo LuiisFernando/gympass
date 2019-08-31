@@ -1,18 +1,15 @@
 import React, { Component, useState, useEffect } from 'react'
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { 
     Container,
     Form,
     Input,
     SubmitButton,
-    SubmitButtonText,
     List,
     Loading,
     Gym,
     Avatar,
     Title,
-    GymButton,
-    GymButtonText,
     Col1,
     Col2,
     GymContainer,
@@ -31,7 +28,7 @@ export default function Main ({ navigation }) {
         setLoading(true)
 
         const gyms = await api.get('gyms')
-
+        
         setGyms(gyms.data)
 
         setLoading(false)
@@ -47,6 +44,24 @@ export default function Main ({ navigation }) {
         navigation.navigate('Gym', { gym })
     }
 
+    function handleRating(academia) {
+        const rating = Math.round(academia.rating * 100) / 100
+        const starArray = []
+        console.log(rating)
+        for (let i = 1; i <= rating; i++) {
+            
+            starArray.push(<Icon key={`${academia.id + i}`} name="star" size={15} />)
+            
+        }
+            
+        if (starArray.length < 5) {
+            for (let i = starArray.length; i < 5; i++) {
+                starArray.push(<Icon key={`${academia.id + i + 1}`} name="star-border" size={15} />)                
+            }
+        }
+
+        return starArray
+    }
 
 
 
@@ -65,7 +80,8 @@ export default function Main ({ navigation }) {
                 </SubmitButton>
             </Form>
 
-            <List 
+            <List
+            
             data={gyms}
             keyExtractor={academia => String(academia.id)}
             ListFooterComponent={loading && <Loading />}
@@ -78,7 +94,10 @@ export default function Main ({ navigation }) {
 
                         <Col2>
                             <Title>{item.title}</Title>
-                            <Rating>{item.rating}</Rating>
+                            
+                            <Rating>
+                                {handleRating(item)}
+                            </Rating>
                         </Col2>
                     </GymContainer>
                     
