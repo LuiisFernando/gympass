@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://i.imgsafe.org/c7/c74b77f9f1.gif">
-  <img width="350" height="720" src="https://i.imgsafe.org/c7/c7dee96d9d.jpeg">
-  <img width="350" height="720" src="https://i.imgsafe.org/c7/c7deac3211.jpeg">
+  <img width="35" height="72" src="https://i.imgsafe.org/c7/c7dee96d9d.jpeg">
+  <img width="35" height="72" src="https://i.imgsafe.org/c7/c7deac3211.jpeg">
 </p>
 
 # gympass
