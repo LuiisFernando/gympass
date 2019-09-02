@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgsafe.org/c7/c73faf038f.gif">
+  <img src="https://i.imgsafe.org/c7/c74b77f9f1.gif">
 </p>
 
 # gympass
