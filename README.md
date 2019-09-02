@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://i.imgsafe.org/c6/c6f782ac3b.gif">
+</p>
+
 # gympass
 
 application developed to schedule activity on gympass
