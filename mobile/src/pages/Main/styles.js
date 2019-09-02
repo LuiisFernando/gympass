@@ -59,7 +59,7 @@ export const Gym = styled.TouchableWithoutFeedback`
 export const GymContainer = styled.View`
     
     height: 90px
-    margin-left: 20px
+    padding-left: 20px
     border-bottom-width: 1px
     border-color: #eee
     flex-direction: row
@@ -82,8 +82,17 @@ export const Title = styled.Text`
 `
 
 export const Rating = styled.View`
+    justify-content: center
+    align-items: center
+`
+
+export const RatingStar = styled.View`
     flex-direction: row
-    margin-left: 10px
+`
+
+export const RatingText = styled.Text`
+    font-size: 35px
+    font-weight: bold
 `
 
 export const Col1 = styled.View`
@@ -91,5 +100,10 @@ export const Col1 = styled.View`
 `
 
 export const Col2 = styled.View`
-    width: 80%
+    width: 50%
+`
+
+export const Col3 = styled.View`
+    flex-direction: column
+    width: 30%
 `
