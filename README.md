@@ -16,3 +16,12 @@ application developed to schedule activity on gympass
 Developed using React Native, axios to consume WebAPI, styed-components, react-navigation, react-native-gesture-handler and 
 react-native-reanimated
 
+Before run the mobile project:
+
+```
+cd .\android\
+./gradlew clean
+cd ..
+react-native link
+react-native run-android
+```
