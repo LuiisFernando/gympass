@@ -21,6 +21,7 @@ Before run the mobile project:
 ```
 cd .\android\app
 keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000
+(fill all the fields with information to generate the debug.keystore)
 cd..
 ./gradlew clean
 cd ..
